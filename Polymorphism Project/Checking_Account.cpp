@@ -15,8 +15,11 @@ bool Checking_Account::deposit(double amount)
     return Account::deposit(amount);
 }
 
-std::ostream &operator<<(std::ostream &os, const Checking_Account &account)
+void Checking_Account::print(std::ostream &os) const
 {
-    os << "[Checking_Account: " << account.name << ": " << account.balance  << "]";
-    return os;
+    os.precision(2);
+    os << std::fixed;
+    // since it is a member, we dont need  account.name & account.balance
+    // if it was a friend, we would need account.name & account.balance
+    os << "[Checking account: " << name << ": " << balance << "]";
 }

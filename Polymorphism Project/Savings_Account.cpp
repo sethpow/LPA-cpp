@@ -21,8 +21,11 @@ bool Savings_Account::withdraw(double amount)
     return Account::withdraw(amount);
 }
 
-std::ostream &operator<<(std::ostream &os, const Savings_Account &account)
+void Savings_Account::print(std::ostream &os) const
 {
-    os << "[Savings_Account: " << account.name << ": " << account.balance << ", " << account.int_rate << "]";
-    return os;
+    os.precision(2);
+    os << std::fixed;
+    // since it is a member, we dont need  account.name & account.balance
+    // if it was a friend, we would need account.name & account.balance
+    os << "[Savings account: " << name << ": " << balance << ", " << int_rate << "]";
 }

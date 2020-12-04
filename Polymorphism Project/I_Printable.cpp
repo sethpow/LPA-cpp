@@ -1,8 +1,8 @@
 #include "I_Printable.h"
 
-std::ostream I_Printable::&operator<<(std::ostream &os, const I_Printable &obj)
+std::ostream &operator<<(std::ostream &os, const I_Printable &obj)
 {
-    os << obj;
+    obj.print(os); // obj.print(reference to the output stream)
     return os;
 }
 

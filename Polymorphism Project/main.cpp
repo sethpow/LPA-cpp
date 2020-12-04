@@ -18,8 +18,11 @@ int main()
     std::cout << frank << std::endl;
     frank.withdraw(7000);
 
-    Account *ptr = new Trust_Account{"Leo", 10000, 2.6};
-    std::cout << *ptr << std::endl;
+    // if statically bound (compile time), slices out the interest b/c it is bound to Account class
+    // (which does not have interest)
+    // if dynamically bound (at run time), it will keep the interest
+    Account *leo = new Trust_Account{"Leo", 10000, 2.6};
+    std::cout << *leo << std::endl;
 
 //     std::cout.precision(2);
 //     std::cout << std::fixed;
