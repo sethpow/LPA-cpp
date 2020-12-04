@@ -2,9 +2,7 @@
 
 Account::Account(std::string name, double balance) 
     : name{name}, balance{balance}
-{
-
-}
+{  }
 
 bool Account::deposit(double amount)
 {
