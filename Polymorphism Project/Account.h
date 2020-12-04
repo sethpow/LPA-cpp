@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 
-class Account {
+class Account
+{
     friend std::ostream &operator<<(std::ostream &os, const Account &account);
 private:   
     static constexpr const char *def_name = "Unnamed Account";
@@ -17,4 +18,5 @@ public:
     bool deposit(double amount);
     bool withdraw(double amount);
 };
+
 #endif

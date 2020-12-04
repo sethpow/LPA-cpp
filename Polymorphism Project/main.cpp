@@ -1,5 +1,3 @@
-// Section 16 
-// Challenge 
 #include <iostream>
 #include <vector>
 #include "Account.h"
@@ -8,14 +6,14 @@
 #include "Trust_Account.h"
 #include "Account_Util.h"
 
-using namespace std; 
 
-int main() {
-    cout.precision(2);
-    cout << fixed;
+int main()
+{
+    std::cout.precision(2);
+    std::cout << std::fixed;
    
     // Accounts
-    vector<Account> accounts;
+    std::vector<Account> accounts;
     accounts.push_back(Account {});
     accounts.push_back(Account {"Larry"});
     accounts.push_back(Account {"Moe", 2000} );
@@ -27,7 +25,7 @@ int main() {
     
     // Savings 
 
-    vector<Savings_Account> sav_accounts;
+    std::vector<Savings_Account> sav_accounts;
     sav_accounts.push_back(Savings_Account {} );
     sav_accounts.push_back(Savings_Account {"Superman"} );
     sav_accounts.push_back(Savings_Account {"Batman", 2000} );
@@ -39,7 +37,7 @@ int main() {
    
    // Checking
    
-    vector<Checking_Account> check_accounts;
+    std::vector<Checking_Account> check_accounts;
     check_accounts.push_back(Checking_Account {} );
     check_accounts.push_back(Checking_Account {"Kirk"} );
     check_accounts.push_back(Checking_Account {"Spock", 2000} );
@@ -51,7 +49,7 @@ int main() {
 
     // Trust
   
-    vector<Trust_Account> trust_accounts;
+    std::vector<Trust_Account> trust_accounts;
     trust_accounts.push_back(Trust_Account {} );
     trust_accounts.push_back(Trust_Account {"Athos", 10000, 5.0} );
     trust_accounts.push_back(Trust_Account {"Porthos", 20000, 4.0} );
@@ -66,8 +64,6 @@ int main() {
     for (int i=1; i<=5; i++)
         withdraw(trust_accounts, 1000);
     
-
     
     return 0;
 }
-
